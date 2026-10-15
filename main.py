@@ -26,6 +26,7 @@ print(wine_quality.head())
 
 # Explore data
 print(wine_quality.groupby(['quality']).mean()) # Data frame grouped by quality with averages
+## Correlation heatmap
 plt.figure(figsize = (8, 8))
 sns.heatmap(wine_quality.corr(), annot = True)
 plt.show()
