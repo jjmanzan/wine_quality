@@ -23,6 +23,7 @@ import seaborn as sns
 # Read csv and put in data frame
 wine_quality = pd.read_csv('winequality-red.csv')
 print(wine_quality.head())
+print(wine_quality.info())
 
 # Explore data
 print(wine_quality.groupby(['quality']).mean()) # Data frame grouped by quality with averages
@@ -103,3 +104,4 @@ plt.ylabel('Quality')
 
 plt.tight_layout()
 plt.show()
+
