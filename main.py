@@ -29,9 +29,10 @@ print(wine_quality.info())
 print(wine_quality.groupby(['quality']).mean()) # Data frame grouped by quality with averages
 
 ## Correlation heatmap
-plt.figure(figsize = (8, 8))
+plt.figure(figsize = (10, 10))
 sns.heatmap(wine_quality.corr(), annot = True)
 plt.show()
+## Highest three correlations with output are alcohol, sulphates, and citric acid. The higher the citric acid content, the fresher and sweeter the wine will taste. The sulphates add to the SO2 content, which acts as an antimicrobial and antioxidant. A higher alcohol content is what people usually prefer. ##
 
 ## Scatterplots of input variables vs output variable
 plt.figure(figsize = (15, 10))
@@ -103,4 +104,8 @@ plt.xlabel('Alcohol')
 plt.ylabel('Quality')
 
 plt.tight_layout()
+plt.show()
+
+## Create a pairplot
+sns.pairplot(data = wine_quality)
 plt.show()
