@@ -26,7 +26,77 @@ print(wine_quality.head())
 
 # Explore data
 print(wine_quality.groupby(['quality']).mean()) # Data frame grouped by quality with averages
+
 ## Correlation heatmap
 plt.figure(figsize = (8, 8))
 sns.heatmap(wine_quality.corr(), annot = True)
 plt.show()
+
+## Scatterplots of input variables vs output variable
+plt.figure(figsize = (15, 10))
+
+plt.subplot(4, 3, 1)
+sns.regplot(data = wine_quality, x = 'fixed acidity', y = 'quality')
+plt.title('Fixed Acidity vs Quality')
+plt.xlabel('Fixed Acidity')
+plt.ylabel('Quality')
+
+plt.subplot(4, 3, 2)
+sns.regplot(data = wine_quality, x = 'volatile acidity', y = 'quality')
+plt.title('Volatile Acidity vs Quality')
+plt.xlabel('Volatile Acidity')
+plt.ylabel('Quality')
+
+plt.subplot(4, 3, 3)
+sns.regplot(data = wine_quality, x = 'citric acid', y = 'quality')
+plt.title('Citric Acid vs Quality')
+plt.xlabel('Citric Acid')
+plt.ylabel('Quality')
+
+plt.subplot(4, 3, 4)
+sns.regplot(data = wine_quality, x = 'residual sugar', y = 'quality')
+plt.title('Residual Sugar vs Quality')
+plt.xlabel('Residual Sugar')
+plt.ylabel('Quality')
+
+plt.subplot(4, 3, 5)
+sns.regplot(data = wine_quality, x = 'chlorides', y = 'quality')
+plt.title('Chlorides vs Quality')
+plt.xlabel('Chlorides')
+plt.ylabel('Quality')
+
+plt.subplot(4, 3, 6)
+sns.regplot(data = wine_quality, x = 'free sulfur dioxide', y = 'quality')
+plt.title('Free Sulfur Dioxide vs Quality')
+plt.xlabel('Free Sulfur Dioxide')
+plt.ylabel('Quality')
+
+plt.subplot(4, 3, 7)
+sns.regplot(data = wine_quality, x = 'total sulfur dioxide', y = 'quality')
+plt.title('Total Sulfur Dioxide vs Quality')
+plt.xlabel('Total Sulfur Dioxide')
+plt.ylabel('Quality')
+
+plt.subplot(4, 3, 8)
+sns.regplot(data = wine_quality, x = 'density', y = 'quality')
+plt.title('Density vs Quality')
+plt.xlabel('Density')
+plt.ylabel('Quality')
+
+plt.subplot(4, 3, 9)
+sns.regplot(data = wine_quality, x = 'pH', y = 'quality')
+plt.title('pH vs Quality')
+plt.xlabel('pH')
+plt.ylabel('Quality')
+
+plt.subplot(4, 3, 10)
+sns.regplot(data = wine_quality, x = 'sulphates', y = 'quality')
+plt.title('Sulphates vs Quality')
+plt.xlabel('Sulphates')
+plt.ylabel('Quality')
+
+plt.subplot(4, 3, 11)
+sns.regplot(data = wine_quality, x = 'alcohol', y = 'quality')
+plt.title('Alcohol vs Quality')
+plt.xlabel('Alcohol')
+plt.ylabel('Quality')
